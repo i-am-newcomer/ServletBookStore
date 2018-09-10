@@ -14,10 +14,10 @@
 		<h3>2、购物车（包括添加进购物车和显示用户购物车商品页面）;</h3>
 		<h2>使用的数据库表: customers、book、orderitems,如下：</h2>
 		<h3 align="center">customers</h3>
-		<p><img alt="customers" src="images/customers.GIF"></p>
+		<p align="center"><img alt="customers" src="images/customers.GIF"></p>
 		<h3 align="center">book</h3>
-		<p><img alt="customers" src="images/book.GIF"></p>
+		<p align="center"><img alt="customers" src="images/book.GIF"></p>
 		<h3 align="center">orderitems</h3>
-		<p><img alt="customers" src="images/orderitems.GIF"></p>	
+		<p align="center"><img alt="customers" src="images/orderitems.GIF"></p>	
 	</body>
 </html>
