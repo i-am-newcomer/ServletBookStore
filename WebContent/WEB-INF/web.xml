@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" metadata-complete="true" version="4.0">
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <filter>
+  	<filter-name>EncodingFilter</filter-name>
+  	<filter-class>com.zy.filter.EncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>Encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+  	<servlet-name>CheckCodeServlet</servlet-name>
+  	<servlet-class>com.zy.image.CheckcodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CheckCodeServlet</servlet-name>
+  	<url-pattern>/checkcode</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>RegisterServlet</servlet-name>
+  	<servlet-class>com.zy.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RegisterServlet</servlet-name>
+  	<url-pattern>/register.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<servlet-class>com.zy.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/login.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ShowBookServlet</servlet-name>
+  	<servlet-class>com.zy.servlet.ShowBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ShowBookServlet</servlet-name>
+  	<url-pattern>/showbook</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>AddShoppingCartServlet</servlet-name>
+  	<servlet-class>com.zy.servlet.AddShoppingCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddShoppingCartServlet</servlet-name>
+  	<url-pattern>/addshopping.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ShowCartServlet</servlet-name>
+  	<servlet-class>com.zy.servlet.ShowCartServlet</servlet-class>
+  </servlet>  
+  <servlet-mapping>
+  	<servlet-name>ShowCartServlet</servlet-name>
+  	<url-pattern>/showcart.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<servlet-class>com.zy.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/logout.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>BeforeLoginServlet</servlet-name>
+  	<servlet-class>com.zy.servlet.BeforeLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>BeforeLoginServlet</servlet-name>
+  	<url-pattern>/beforelogin.do</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
