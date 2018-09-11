@@ -12,13 +12,15 @@ import javax.servlet.http.HttpSession;
 
 import com.zy.entity.Book;
 import com.zy.entity.OrderItem;
+import com.zy.entity.User;
 import com.zy.services.ShoppingCartServices;
 
 public class ShowCartServlet extends HttpServlet {
 
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String cust_id = (String) session.getAttribute("cust_id");
+		User user = (User) session.getAttribute("user");
+		String cust_id = String.valueOf(user.getId());
 		System.out.println("cust_id: "+cust_id);
 		RequestDispatcher view;
 		if(cust_id == null) {

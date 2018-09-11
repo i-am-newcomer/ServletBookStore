@@ -15,5 +15,9 @@ public class UserServices {
 	public Map<String, String> login(String name, String pwd, String login_checkcode, String checkcode) {
 		return userdao.login(name, pwd, login_checkcode, checkcode);
 	}
+	
+	public User getByID(String id) {
+		return userdao.getByID(id);
+	}
 
 }

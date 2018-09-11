@@ -14,7 +14,7 @@
 		</jsp:include>
 	</td></tr>
 	
-	<tr><td align="center" valign="top"><h1>欢迎您， ${sessionScope.username}</h1></td></tr>
+	<tr><td align="center" valign="top"><h1>欢迎您， ${sessionScope.user.name}</h1></td></tr>
 	
 	<tr height="5%"><td>
 		<jsp:include page="footer.jsp" flush="true" />

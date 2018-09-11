@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.zy.entity.User;
 import com.zy.services.UserServices;
 
 public class LoginServlet extends HttpServlet {
@@ -25,11 +26,12 @@ public class LoginServlet extends HttpServlet {
 		String checkcode = (String) session.getAttribute("checkcode");
 		
 		//进行登录验证。 若验证通过，返回验证结果和user_id的map， 并将user_id保存在会话属性中；若验证不通过，返回验证结果和错误信息的map;
-		Map<String, String> resultmap = new UserServices().login(name, pwd, login_checkcode, checkcode);
+		UserServices userservices = new UserServices();
+		Map<String, String> resultmap = userservices.login(name, pwd, login_checkcode, checkcode);
 		RequestDispatcher view;
 		if(resultmap.get("successresult")!=null) {
-			session.setAttribute("cust_id", resultmap.get("successresult"));
-			session.setAttribute("username", name);
+			User user = userservices.getByID(resultmap.get("successresult"));
+			session.setAttribute("user", user);
 			view = request.getRequestDispatcher("login_success.jsp");
 		}
 		else {

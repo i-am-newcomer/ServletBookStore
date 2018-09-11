@@ -1,7 +1,6 @@
 package com.zy.servlet;
 
 import java.io.IOException;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,8 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.zy.entity.Book;
-import com.zy.entity.OrderItem;
+import com.zy.entity.User;
 import com.zy.services.ShoppingCartServices;
 
 public class AddShoppingCartServlet extends HttpServlet {
@@ -23,7 +21,8 @@ public class AddShoppingCartServlet extends HttpServlet {
 		//System.out.println("book_quantity: "+book_quantity);
 		
 		HttpSession session = request.getSession();
-		String cust_id = (String) session.getAttribute("cust_id");
+		User user = (User)session.getAttribute("user");
+		String cust_id = String.valueOf(user.getId());
 		//System.out.println("cust_id:"+cust_id);
 	
 		//如果用户未登录，则提醒用户登录；若已经登录，则将选择的书本添加到相应用户的orderitems中

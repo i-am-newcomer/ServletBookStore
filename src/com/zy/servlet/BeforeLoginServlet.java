@@ -15,7 +15,7 @@ public class BeforeLoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		RequestDispatcher view;
 		//判断是否已经登录，若已经登录，则转到login_sucess页面，否则跳到登录页面
-		if(session.getAttribute("cust_id")!=null) {
+		if(session.getAttribute("user")!=null) {
 			view = request.getRequestDispatcher("login_success.jsp");
 		}
 		else {

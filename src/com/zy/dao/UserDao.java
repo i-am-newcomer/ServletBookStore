@@ -100,6 +100,22 @@ public class UserDao extends DBConnect {
 		return resultmap;
 				
 	}
+	
+	public User getByID(String id) {
+		String sql = "SELECT * FROM customers WHERE cust_id=?";
+		rs = this.executeQuery(sql, id);
+		try {
+			if(rs.next()) {
+				return new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+			}
+			this.close();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 
 
 }

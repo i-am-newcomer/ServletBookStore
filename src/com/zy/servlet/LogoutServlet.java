@@ -15,7 +15,7 @@ public class LogoutServlet extends HttpServlet {
 		
 		//将会话属性中的user_id值置null,退出当前用户登录；
 		HttpSession session = request.getSession();
-		session.setAttribute("cust_id", null);;
+		session.setAttribute("user", null);;
 		RequestDispatcher view =  request.getRequestDispatcher("login.jsp");
 		view.forward(request, response);
 	}
