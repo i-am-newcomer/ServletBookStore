@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.zy.entity.User;
 import com.zy.services.UserServices;
 
 public class RegisterServlet extends HttpServlet {
@@ -29,7 +30,7 @@ public class RegisterServlet extends HttpServlet {
 		//System.out.println("checkcode: "+checkcode);
 		
 		//进行注册验证
-		String result = new UserServices().register(name, pwd, email, phone, confpwd,  checkcode, reg_checkcode);
+		String result = new UserServices().register(new User(name, pwd, confpwd, email, phone),  checkcode, reg_checkcode);
 		RequestDispatcher view ;
 		if(result.equals("true")) {
 			view = request.getRequestDispatcher("register_success.jsp"); //注册成功
